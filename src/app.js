@@ -22,7 +22,7 @@ function slideMarkup(slide, index, reader = false) {
   let content = "";
   if (slide.type.includes("contrast")) content = `<h2>${slide.title}</h2><div class="contrast-grid"><article><small>${slide.leftLabel}</small><h3>${slide.leftTitle}</h3><p>${slide.leftBody}</p></article><article><small>${slide.rightLabel}</small><h3>${slide.rightTitle}</h3><p>${slide.rightBody}</p></article></div>`;
   else if (slide.type.includes("choice")) content = `<h2>${slide.title}</h2><div class="choice-row">${slide.choices.map((c, i) => `<div><span>0${i + 1}</span><strong>${c}</strong></div>`).join("")}</div>`;
-  else if (slide.type.includes("steps")) content = `<h2>${slide.title}</h2><div class="steps">${slide.steps.map(s => `<div><span>${s[0]}</span><strong>${s[1]}</strong></div>`).join("")}</div>`;
+  else if (slide.type.includes("steps")) content = `<h2>${slide.title}</h2><div class="steps-grid">${slide.steps.map(s => `<div><span>${s[0]}</span><strong>${s[1]}</strong></div>`).join("")}</div>`;
   else if (slide.type.includes("question")) content = `<h2>${lines(slide.title)}</h2><p class="question">${lines(slide.question)}</p>`;
   else if (slide.type.includes("closing")) content = `<blockquote>${slide.quote}</blockquote><cite>${slide.reference}</cite><h2>${slide.title}</h2>`;
   else if (slide.type.includes("scripture")) content = `<blockquote>${lines(slide.quote)}</blockquote><cite>${slide.reference}</cite>`;
